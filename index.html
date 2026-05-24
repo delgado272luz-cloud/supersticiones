@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Archivo de lo Oculto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Pirata+One&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --papel: #f4ecd8;
+            --tinta: #2c2c2c;
+            --oro: #bda888;
+        }
+
+        body {
+            background-color: #2b2520; /* Color oscuro para resaltar el papel */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .libro-contenedor {
+            background-color: var(--papel);
+            width: 80%;
+            max-width: 900px;
+            padding: 60px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border: 8px double var(--oro);
+            position: relative;
+        }
+
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-family: 'Pirata One', cursive; font-size: 5em; color: #000; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        
+        nav { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid var(--tinta); padding-bottom: 20px; }
+        nav a { color: var(--tinta); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: #8b0000; }
+
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: #eaddc7;
+            padding: 30px 10px;
+            border: 1px solid #c5b396;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tarjeta:hover {
+            background: #dcd0bc;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .tarjeta h3 { font-family: 'Pirata One', cursive; font-size: 1.8em; margin: 0; color: #5d4037; }
+
+        footer { text-align: center; margin-top: 50px; font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+
+<div class="libro-contenedor">
+    <header>
+        <h1>El Archivo de lo Oculto</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="sobre.html">Conceptos</a>
+            <a href="contacto.html">Registro</a>
+        </nav>
+    </header>
+
+    <main class="grid-categorias">
+        <a href="antiguas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Antiguas</h3></div></a>
+        <a href="nuevas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Nuevas</h3></div></a>
+        <a href="generacionales.html" style="text-decoration:none;"><div class="tarjeta"><h3>Generacionales</h3></div></a>
+        <a href="cotidianas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Cotidianas</h3></div></a>
+    </main>
+
+    <footer>
+        <p>"La superstición es la religión de las mentes temerosas."</p>
+    </footer>
+</div>
+
+</body>
+</html>

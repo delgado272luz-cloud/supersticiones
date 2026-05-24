@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre las Supersticiones</title>
+    <!-- Fuentes estilo antiguo -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Pirata+One&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --papel: #f4ecd8;
+            --texto: #2c2c2c;
+            --acentos: #5d4037;
+        }
+
+        body {
+            background-color: #d1c4a9;
+            font-family: 'Crimson Text', serif;
+            color: var(--texto);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
+            background-color: var(--papel);
+            width: 80%;
+            margin: auto;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            border: 2px solid #bda888;
+        }
+
+        header { text-align: center; border-bottom: 2px solid var(--acentos); margin-bottom: 30px; }
+        h1 { font-family: 'Pirata One', cursive; font-size: 3.5em; margin: 0; color: #000; }
+        
+        .pregunta { margin-bottom: 30px; border-left: 4px solid var(--acentos); padding-left: 15px; }
+        h3 { color: var(--acentos); font-size: 1.5em; margin-bottom: 10px; }
+        p { line-height: 1.8; font-size: 1.1em; }
+
+        .btn-volver {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--acentos);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .btn-volver:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <header>
+        <h1>El Saber Oculto</h1>
+    </header>
+
+    <div class="pregunta">
+        <h3>¿Qué son las supersticiones?</h3>
+        <p>Al final, las supersticiones no son más que reglas invisibles que nos inventamos para sentir que tenemos el control sobre lo que no podemos predecir. Imagínatelas como 'atajos mentales': cuando la vida se pone incierta o nos da miedo algo, nuestro cerebro busca una causa y un efecto para sentirse más seguro.
+
+Muchas nacieron hace siglos como consejos prácticos para evitar accidentes, pero con el tiempo se mezclaron con mitos, religión y miedos antiguos, transformándose en una especie de lenguaje cultural. Lo curioso es que funcionan como un efecto psicológico: si crees que algo te traerá mala suerte, te pones nervioso y es más probable que te equivoques, lo que termina confirmando tu sospecha. Son una forma muy humana de intentar poner orden en el caos, una manera de creer que, si seguimos ciertos rituales, podemos atraer lo bueno y mantener a raya la mala fortuna.</p>
+    </div>
+
+    <div class="pregunta">
+        <h3>¿Por qué se crearon?</h3>
+        <p>Las supersticiones se crearon fundamentalmente como un mecanismo de defensa ante la angustia que genera la incertidumbre, son la respuesta de la mente humana ante un mundo donde no siempre podemos controlar lo que nos sucede. En esencia, nacieron de tres pilares: primero, como una herramienta psicológica para obtener la ilusión de control, permitiéndonos sentir que si seguimos un ritual, podemos atraer el bien o evitar el mal; segundo, como normas de supervivencia camufladas, pues muchos de estos mitos fueron en realidad consejos prácticos de seguridad, como no trabajar en la oscuridad o cuidar objetos valiosos, que, para asegurar su cumplimiento, se transmitieron de generación en generación mediante advertencias de mala suerte; y tercero, debido al funcionamiento natural de nuestro cerebro, que está diseñado para buscar patrones y causas incluso donde no los hay. Cuando algo inesperado ocurre, nuestra mente conecta eventos aleatorios para intentar darle sentido al caos, transformando la coincidencia en una creencia que nos ayuda a navegar la vida con una sensación de mayor protección y orden.</p>
+    </div>
+
+    <div class="pregunta">
+        <h3>¿Cuál es su origen?</h3>
+        <p>El origen de las supersticiones es un fenómeno complejo que nace de la intersección entre la necesidad psicológica de control, la herencia cultural y el funcionamiento neurológico del ser humano. En sus raíces, no tienen un único punto de partida, sino que surgen como un sedimento histórico de miles de años de intentos por explicar lo inexplicable, muchas comenzaron como normas prácticas de supervivencia o higiene en la antigüedad (como el cuidado de bienes escasos o medidas de seguridad física) que, para garantizar su cumplimiento en sociedades sin explicaciones científicas, fueron revestidas con advertencias de consecuencias sobrenaturales o mala suerte. Con el paso del tiempo, estas creencias se entrelazaron con mitos, leyendas religiosas y tradiciones paganas, creando un código de conducta que ayudaba a las comunidades a procesar el miedo a la incertidumbre. A nivel biológico, su origen radica en el sesgo de confirmación de nuestro cerebro: una capacidad evolutiva que nos impulsa a buscar patrones de causa y efecto incluso donde no los hay, permitiéndonos transformar la coincidencia en una "ley" mágica para reducir la ansiedad, sentirnos protegidos ante el azar y dotar de orden a un mundo que, en gran medida, es impredecible.</p>
+    </div>
+
+    <a href="index.html" class="btn-volver">← Regresar a la página principal</a>
+</div>
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const contenedor = document.querySelector('.contenedor');
+        contenedor.style.opacity = '0';
+        contenedor.style.transition = 'opacity 1.5s';
+        setTimeout(() => {
+            contenedor.style.opacity = '1';
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
