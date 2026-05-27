@@ -2,69 +2,121 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Archivo de lo Oculto</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Pirata+One&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --papel: #f4ecd8;
-            --tinta: #2c2c2c;
-            --oro: #bda888;
+            /* Paleta de colores "Madera y Pergamino" */
+            --madera-oscura: #2c1b12; /* Café profundo */
+            --madera-veta: #3d2b1f;    /* Tono para degradados */
+            --beige-suave: #eaddc7;   /* Letras principales */
+            --oro-viejo: #a68b5b;     /* Detalles y bordes */
+            --sangre-clara: #d32f2f;  /* Hover de enlaces */
         }
 
         body {
-            background-color: #2b2520; /* Color oscuro para resaltar el papel */
+            background-color: #120c08; /* El vacío detrás del libro */
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             font-family: 'Crimson Text', serif;
+            color: var(--beige-suave);
         }
 
         .libro-contenedor {
-            background-color: var(--papel);
-            width: 80%;
+            /* Fondo tipo madera amaderada */
+            background-color: var(--madera-oscura);
+            background-image: linear-gradient(45deg, var(--madera-oscura) 25%, var(--madera-veta) 100%);
+            
+            width: 90%;
             max-width: 900px;
-            padding: 60px;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            border: 8px double var(--oro);
+            padding: 50px;
+            box-sizing: border-box;
+            box-shadow: 0 0 80px rgba(0,0,0,0.9), inset 0 0 100px rgba(0,0,0,0.5);
+            border: 4px solid var(--oro-viejo);
+            outline: 2px solid var(--madera-oscura); /* Doble borde elegante */
             position: relative;
         }
 
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { font-family: 'Pirata One', cursive; font-size: 5em; color: #000; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        header { text-align: center; margin-bottom: 40px; }
         
-        nav { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid var(--tinta); padding-bottom: 20px; }
-        nav a { color: var(--tinta); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        nav a:hover { color: #8b0000; }
+        h1 { 
+            font-family: 'Pirata One', cursive; 
+            font-size: clamp(3em, 10vw, 5em); 
+            color: var(--oro-viejo); 
+            margin: 0; 
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+        }
+        
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-top: 20px;
+            border-bottom: 1px solid rgba(166, 139, 91, 0.3); 
+            padding-bottom: 20px; 
+        }
+
+        nav a { 
+            color: var(--beige-suave); 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            transition: 0.3s;
+            font-size: 0.9em;
+        }
+
+        nav a:hover { color: var(--oro-viejo); text-shadow: 0 0 8px var(--oro-viejo); }
 
         .grid-categorias {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .tarjeta {
-            background: #eaddc7;
-            padding: 30px 10px;
-            border: 1px solid #c5b396;
+            background: rgba(255, 255, 255, 0.05); /* Fondo casi transparente */
+            padding: 40px 15px;
+            border: 1px solid var(--oro-viejo);
             text-align: center;
-            cursor: pointer;
+            text-decoration: none; 
+            display: block;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .tarjeta:hover {
-            background: #dcd0bc;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: rgba(166, 139, 91, 0.15);
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(166, 139, 91, 0.2);
         }
 
-        .tarjeta h3 { font-family: 'Pirata One', cursive; font-size: 1.8em; margin: 0; color: #5d4037; }
+        .tarjeta h3 { 
+            font-family: 'Pirata One', cursive; 
+            font-size: 1.8em; 
+            margin: 0; 
+            color: var(--beige-suave); 
+            letter-spacing: 1px;
+        }
 
-        footer { text-align: center; margin-top: 50px; font-style: italic; color: #666; }
+        footer { 
+            text-align: center; 
+            margin-top: 50px; 
+            font-style: italic; 
+            color: var(--oro-viejo);
+            opacity: 0.8;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .libro-contenedor { padding: 30px 15px; }
+            h1 { font-size: 3em; }
+            nav { gap: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -80,10 +132,10 @@
     </header>
 
     <main class="grid-categorias">
-        <a href="antiguas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Antiguas</h3></div></a>
-        <a href="nuevas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Nuevas</h3></div></a>
-        <a href="generacionales.html" style="text-decoration:none;"><div class="tarjeta"><h3>Generacionales</h3></div></a>
-        <a href="cotidianas.html" style="text-decoration:none;"><div class="tarjeta"><h3>Cotidianas</h3></div></a>
+        <a href="antiguas.html" class="tarjeta"><h3>Antiguas</h3></a>
+        <a href="nuevas.html" class="tarjeta"><h3>Nuevas</h3></a>
+        <a href="generacionales.html" class="tarjeta"><h3>Generacionales</h3></a>
+        <a href="cotidianas.html" class="tarjeta"><h3>Cotidianas</h3></a>
     </main>
 
     <footer>
